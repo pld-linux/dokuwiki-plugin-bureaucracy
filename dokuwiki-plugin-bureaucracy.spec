@@ -4,12 +4,12 @@
 Summary:	Easily create HTML forms and collect the data via email or use it to create pages
 Summary(pl.UTF-8):	Wtyczka bureaucracy dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
-Version:	20110525
-Release:	2
+Version:	20111124
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/tarball/master#/%{plugin}.tgz
-# Source0-md5:	042ceae7e1aa8b12e3a93e568846f326
+Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/tarball/master#/%{plugin}-%{version}.tgz
+# Source0-md5:	82ecc5920d3cccbd507e29092f2a5db3
 URL:		http://www.dokuwiki.org/plugin:bureaucracy
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.520
