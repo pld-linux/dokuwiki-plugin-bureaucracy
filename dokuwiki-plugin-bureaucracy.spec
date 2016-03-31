@@ -4,16 +4,16 @@
 Summary:	Easily create HTML forms and collect the data via email or use it to create pages
 Summary(pl.UTF-8):	Wtyczka bureaucracy dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
-Version:	20111124
-Release:	6
+Version:	20160331
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://github.com/splitbrain/dokuwiki-plugin-%{plugin}/tarball/master#/%{plugin}-%{version}.tgz
-# Source0-md5:	82ecc5920d3cccbd507e29092f2a5db3
-URL:		http://www.dokuwiki.org/plugin:bureaucracy
+Source0:	https://github.com/splitbrain/dokuwiki-plugin-%{plugin}/archive/ec2ff42/%{plugin}-%{version}.tar.gz
+# Source0-md5:	e0a2b19b9daafd3488bd3644db36b78b
+URL:		https://www.dokuwiki.org/plugin:bureaucracy
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.520
-Requires:	dokuwiki >= 20090214
+Requires:	dokuwiki >= 20131208
 Requires:	php(core) >= %{php_min_version}
 Requires:	php(pcre)
 Requires:	php(spl)
@@ -36,7 +36,10 @@ address or used to create new pages using a template.
 %prep
 %setup -qc
 mv *-%{plugin}-*/* .
+rm -r *-%{plugin}-*
+rm -r _test
 
+%build
 version=$(awk '/^date/{print $2}' plugin.info.txt)
 if [ "$(echo "$version" | tr -d -)" != %{version} ]; then
 	: %%{version} mismatch
@@ -70,5 +73,4 @@ fi
 %{plugindir}/*.txt
 %{plugindir}/conf
 %{plugindir}/script
-%{plugindir}/actions
-%{plugindir}/fields
+%{plugindir}/helper
