@@ -1,15 +1,17 @@
+%define		subver		2017-07-27
+%define		ver		%(echo %{subver} | tr -d -)
 %define		plugin		bureaucracy
 %define		php_min_version 5.1.2
 %include	/usr/lib/rpm/macros.php
 Summary:	Easily create HTML forms and collect the data via email or use it to create pages
 Summary(pl.UTF-8):	Wtyczka bureaucracy dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
-Version:	20160331
+Version:	%{ver}
 Release:	1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	https://github.com/splitbrain/dokuwiki-plugin-%{plugin}/archive/ec2ff42/%{plugin}-%{version}.tar.gz
-# Source0-md5:	e0a2b19b9daafd3488bd3644db36b78b
+Source0:	https://github.com/splitbrain/dokuwiki-plugin-%{plugin}/archive/%{subver}/%{plugin}-%{version}.tar.gz
+# Source0-md5:	8eb3f12f2c2c622019cf503f9a0c0ff8
 URL:		https://www.dokuwiki.org/plugin:bureaucracy
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.520
@@ -72,5 +74,6 @@ fi
 %{plugindir}/*.php
 %{plugindir}/*.txt
 %{plugindir}/conf
-%{plugindir}/script
 %{plugindir}/helper
+%{plugindir}/interfaces
+%{plugindir}/script
