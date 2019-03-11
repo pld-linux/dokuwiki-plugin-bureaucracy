@@ -1,4 +1,4 @@
-%define		subver		2017-07-27
+%define		subver		2018-09-10
 %define		ver		%(echo %{subver} | tr -d -)
 %define		plugin		bureaucracy
 %define		php_min_version 5.1.2
@@ -11,7 +11,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/splitbrain/dokuwiki-plugin-%{plugin}/archive/%{subver}/%{plugin}-%{version}.tar.gz
-# Source0-md5:	8eb3f12f2c2c622019cf503f9a0c0ff8
+# Source0-md5:	ec4eea949c8aa7b193791bbdea52db85
 URL:		https://www.dokuwiki.org/plugin:bureaucracy
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.520
