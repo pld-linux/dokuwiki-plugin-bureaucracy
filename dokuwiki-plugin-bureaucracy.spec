@@ -2,7 +2,6 @@
 %define		ver		%(echo %{subver} | tr -d -)
 %define		plugin		bureaucracy
 %define		php_min_version 5.1.2
-%include	/usr/lib/rpm/macros.php
 Summary:	Easily create HTML forms and collect the data via email or use it to create pages
 Summary(pl.UTF-8):	Wtyczka bureaucracy dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
