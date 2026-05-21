@@ -1,4 +1,4 @@
-%define		subver		2018-09-10
+%define		subver		2025-03-06
 %define		ver		%(echo %{subver} | tr -d -)
 %define		plugin		bureaucracy
 %define		php_min_version 5.1.2
@@ -6,11 +6,11 @@ Summary:	Easily create HTML forms and collect the data via email or use it to cr
 Summary(pl.UTF-8):	Wtyczka bureaucracy dla DokuWiki
 Name:		dokuwiki-plugin-%{plugin}
 Version:	%{ver}
-Release:	3
+Release:	1
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	https://github.com/splitbrain/dokuwiki-plugin-%{plugin}/archive/%{subver}/%{plugin}-%{version}.tar.gz
-# Source0-md5:	ec4eea949c8aa7b193791bbdea52db85
+# Source0-md5:	49e55a1b31f5fceb3e3433da78d47fed
 URL:		https://www.dokuwiki.org/plugin:bureaucracy
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.520
@@ -24,7 +24,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		dokuconf	/etc/webapps/dokuwiki
 %define		dokudir		/usr/share/dokuwiki
 %define		plugindir	%{dokudir}/lib/plugins/%{plugin}
-%define		find_lang 	%{_usrlibrpm}/dokuwiki-find-lang.sh %{buildroot}
+%define		find_lang 	%{_rpmconfigdir}/dokuwiki-find-lang.sh %{buildroot}
 
 %description
 The bureaucracy plugin allows you to create a HTML form right within
@@ -38,7 +38,6 @@ address or used to create new pages using a template.
 %setup -qc
 mv *-%{plugin}-*/* .
 rm -r *-%{plugin}-*
-rm -r _test
 
 %build
 version=$(awk '/^date/{print $2}' plugin.info.txt)
